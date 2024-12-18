@@ -1,0 +1,14 @@
+root@ip-10-1-1-140:/opt# cat hosts
+[jenkins-master]
+10.1.1.142
+
+[jenkins-master:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/opt/dpp-terraform.pem
+
+[build-slave]
+10.1.1.13
+
+[build-slave:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/opt/dpp-terraform.pem
