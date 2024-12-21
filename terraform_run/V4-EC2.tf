@@ -29,7 +29,19 @@ resource "aws_security_group" "demo-sg" {
     ipv6_cidr_blocks = []
     prefix_list_ids = []
     security_groups = []
-    self = false  } ]
+    self = false  },
+    
+    {
+    description = "Jenkins port"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    ipv6_cidr_blocks = []
+    prefix_list_ids = []
+    security_groups = []
+    self = false  }
+    ]
 
   egress = [{
     description = "SSH access"
